@@ -1,3 +1,14 @@
 controllers:
     resource: ../src/Controller/
     type: attribute
+app_controller:
+    path: /
+    controller: App\Controller\AppController::index
+user_controller_add:
+    path: /user/add
+    controller: App\Controller\UserController::add
+    methods: GET
+user_controller_create:
+    path: /user/add/store
+    controller: App\Controller\UserController::store
+    methods: POST

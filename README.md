@@ -14,3 +14,11 @@
 Данный проект необходимо будет залить на gitlab и предоставить ссылку на репозиторий.
 
 Срок сдачи 3 дня
+
+# Process
+
+### Pages/Routes
+- / 
+- /user/add
+- /user/products/add
+- /users/products
