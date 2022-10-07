@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <section id="homepage_menu" class="vh-100 d-flex align-items-center justify-content-center">
+        <h1 class="h2 m-0">{{ title }}</h1>
+        <div class="alert alert-light p-3 m-0">
+            <div class="btn-group btn-group-sm" role="group" aria-label="Basic outlined example">
+                <a href="{{ path('app_user_new') }}" title="Add user" class="btn btn-outline-primary">Add user</a>
+                <a href="{{ path('app_user_products_add') }}" title="" class="btn btn-outline-primary">Add product(s) to the user</a>
+                <a href="{{ path('app_user_products') }}" title="Users products list" class="btn btn-outline-primary">Users products list</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}
