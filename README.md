@@ -1,4 +1,24 @@
-Тестовое задани:
+# Installation
+- Open terminal and write commands:
+```
+cmd: git clone https://github.com/v-e-y/symfony-test.git .
+cmd: composer install
+cmd: docker-compose up -d --build
+cmd: docker container exec -it symfony-test-php-1 /bin/bash
+cmd: bin/console doctrine:migrations:migrate
+cmd: bin/console doctrine:fixtures:load
+```
+- In browser open http://localhost/
+
+## Results
+
+![Home page](/results/homepage.png "Home page")
+![Home page](/results/addUser.png "Add user page")
+![Home page](/results/addUserToProducts.png "Add User to Products")
+![Home page](/results/listOfUsersAndHisProducts.png "list of Users and his Products")
+
+---  
+Тестовое задани:  
 Необходимо создать проект на фреймворке Symfony.
 Создать две формы:
 1. Добавление юзера, поля (firstName, lastName, age).
@@ -14,12 +34,3 @@
 Данный проект необходимо будет залить на gitlab и предоставить ссылку на репозиторий.
 
 Срок сдачи 3 дня
-
-# Process
-
-### Pages/Routes
-- / 
-- /user/new
-- /users/products/add
-- /users/products
-
