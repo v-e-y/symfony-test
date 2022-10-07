@@ -3,13 +3,34 @@
 {% block title %}Users and products{% endblock %}
 
 {% block main %}
-        <h1 class="h2">Users and products</h1>
+        <h1 class="h2 pt-3">Users and products</h1>
         <section class="alert alert-light">
-            {% for user in users %}
-            {{ dump(user) }}
-                {{ user.firstName }}
-                <br>
-                {{ user.lastName }}
-            {% endfor %}
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                    <th scope="col">Users <small><em>(first name and last name)</em></small></th>
+                    <th scope="col">Product(s)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                        <tr>
+                            <td>
+                                {{ user.firstName }} {{ user.lastName }}
+                            </td>
+                            <td>
+                                {% if user.products|length > 0 %}
+                                    <ul class="list-unstyled mb-0">
+                                        {% for product in user.products %}
+                                            <li>{{ product.name }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {# dump(user.getProducts()) #}
+                    {% endfor %}
+                </tbody>
+            </table>
         </section>
 {% endblock %}

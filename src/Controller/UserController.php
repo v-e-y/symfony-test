@@ -6,6 +6,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\UserType;
+use App\Repository\ProductRepository;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -38,6 +39,11 @@ class UserController extends AbstractController
         ]);
     }
 
+    /**
+     * Show list of Users and his Products
+     * @param \App\Repository\UserRepository $userRepository
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function getUsersProducts(UserRepository $userRepository): Response
     {
         return $this->render('user/users_products.html.twig', [
@@ -45,10 +51,18 @@ class UserController extends AbstractController
         ]);
     }
     
-    public function addProducts(UserRepository $userRepository): Response
+    public function addProducts(
+        Request $request,
+        UserRepository $userRepository, 
+        ProductRepository $productRepository
+    ): Response
     {
+        //dump($userRepository->findAll(), $productRepository->findAll()); die;
+        
+
         return $this->render('user/users_products_add.html.twig', [
-            'users' => $userRepository->findAll()
+            'users' => $userRepository->findAll(),
+            'products' => $productRepository->findAll()
         ]);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Factory\UserFactory;
 use App\Factory\ProductFactory;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -15,7 +16,13 @@ class AppFixtures extends Fixture
         $manager->persist($product);
         $manager->flush();
         */
-        ProductFactory::createMany(16);
+        UserFactory::createOne();
+        
+        ProductFactory::createMany(8);
+
+        ProductFactory::createMany(4, [
+            'user_id' => UserFactory::new()
+        ]);
         
     }
 }

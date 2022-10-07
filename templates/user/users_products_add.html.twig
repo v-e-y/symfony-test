@@ -3,8 +3,30 @@
 {% block title %}Users and products{% endblock %}
 
 {% block main %}
-        <h1 class="h2">Users and products</h1>
+        <h1 class="h2 pt-3">Users and products</h1>
         <section class="alert alert-light">
-            hi
+            <form method="post" action="{{ path('app_user_products_add') }}">
+                <fieldset>
+                    {% for product in products %}
+                        <div class="form-group row">
+                            <label for="{{ product.id }}" class="col-md-4 col-form-label">{{ product.name }}</label>
+                            <div class="col-md-8">
+                                <select class="form-select form-select-sm" aria-label="Select user for product" id="{{ product.id }}">
+                                    <option selected>Open this select menu</option>
+                                    {% for user in users %}
+                                        {% if product.userId and product.userId.id == user.id %}
+                                            <option selected>{{ user.firstName }} {{ user.lastName }}</option>
+                                        {% else %}
+                                            <option value="{{ user.id }}">{{ user.firstName }} {{ user.lastName }}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <hr>
+                    <button type="submit" class="btn btn-sm btn-outline-success">Save</button>
+                </fieldset>
+            </form>
         </section>
 {% endblock %}
