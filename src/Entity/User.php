@@ -92,4 +92,14 @@ class User
 
         return $this;
     }
+
+    public function __toString(): string
+    {
+        return $this->id;
+    }
+
+    public static function getAllUsers(UserRepository $userRepository): Collection
+    {
+        return $userRepository->getAll();
+    }
 }

@@ -51,18 +51,20 @@ class UserController extends AbstractController
         ]);
     }
     
-    public function addProducts(
-        Request $request,
+    public function addProductsToUsers(
         UserRepository $userRepository, 
         ProductRepository $productRepository
     ): Response
     {
-        //dump($userRepository->findAll(), $productRepository->findAll()); die;
-        
-
         return $this->render('user/users_products_add.html.twig', [
             'users' => $userRepository->findAll(),
             'products' => $productRepository->findAll()
         ]);
+    }
+
+    public function saveProductsToUsers(Request $request): Response
+    {
+        dd($request->request);
+        
     }
 }

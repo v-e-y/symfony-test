@@ -12,8 +12,12 @@ app_user_new:
 # Add products to the user
 app_user_products_add:
     path: /users/products/add
-    controller: App\Controller\UserController::addProducts
-    methods: GET|POST
+    controller: App\Controller\UserController::addProductsToUsers
+    methods: GET
+app_user_products_save:
+    path: /users/products/save
+    controller: App\Controller\UserController::saveProductsToUsers
+    methods: POST
 # Show users with products
 app_user_products:
     path: /users/products

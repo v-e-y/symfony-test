@@ -5,7 +5,7 @@
 {% block main %}
         <h1 class="h2 pt-3">Users and products</h1>
         <section class="alert alert-light">
-            <form method="post" action="{{ path('app_user_products_add') }}">
+            <form method="post" action="{{ path('app_user_products_save') }}">
                 <fieldset>
                     {% for product in products %}
                         <div class="form-group row">
@@ -26,6 +26,7 @@
                     {% endfor %}
                     <hr>
                     <button type="submit" class="btn btn-sm btn-outline-success">Save</button>
+                    {# TODO csrf#}
                 </fieldset>
             </form>
         </section>
