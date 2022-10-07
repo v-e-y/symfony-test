@@ -3,9 +3,11 @@
 {% block title %}New User{% endblock %}
 
 {% block main %}
-        <h1 class="h2">Create new User</h1>
-        <section class="alert alert-light">
-        {{ include('user/_form.html.twig') }}
+    <h1 class="h2 pt-3">Create new User</h1>
+    <div class="row">
+        <section class="alert alert-light col-12 col-md-6">
+                {{ include('user/_form.html.twig') }}
         </section>
-        <a href="{{ path('app_user_index') }}">back to list</a>
+    </div>
+    <a href="{{ path('app_controller_home') }}">Home</a>
 {% endblock %}

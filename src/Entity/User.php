@@ -92,16 +92,4 @@ class User
 
         return $this;
     }
-
-    public function removeProduct(Product $getProduct): self
-    {
-        if ($this->getProducts->removeElement($getProduct)) {
-            // set the owning side to null (unless already changed)
-            if ($getProduct->getUserId() === $this) {
-                $getProduct->setUserId(null);
-            }
-        }
-
-        return $this;
-    }
 }

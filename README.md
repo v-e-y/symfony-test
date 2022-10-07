@@ -19,6 +19,7 @@
 
 ### Pages/Routes
 - / 
-- /user/add
-- /user/products/add
+- /user/new
+- /users/products/add
 - /users/products
+

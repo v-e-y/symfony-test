@@ -5,9 +5,9 @@
         <h1 class="h2 m-0">{{ title }}</h1>
         <div class="alert alert-light p-3 m-0">
             <div class="btn-group btn-group-sm" role="group" aria-label="Basic outlined example">
-                <a href="#" title="" class="btn btn-outline-primary">Add user</a>
-                <a href="#" title="" class="btn btn-outline-primary">Add product(s) to the user</a>
-                <a href="#" title="" class="btn btn-outline-primary">Users products list</a>
+                <a href="{{ path('app_user_new') }}" title="Add user" class="btn btn-outline-primary">Add user</a>
+                <a href="{{ path('app_user_products') }}" title="" class="btn btn-outline-primary">Add product(s) to the user</a>
+                <a href="{{ path('app_user_products') }}" title="Users products list" class="btn btn-outline-primary">Users products list</a>
             </div>
         </div>
     </section>

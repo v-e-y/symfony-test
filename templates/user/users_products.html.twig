@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Users and products{% endblock %}
+
+{% block main %}
+        <h1 class="h2">Users and products</h1>
+        <section class="alert alert-light">
+            {% for user in users %}
+            {{ dump(user) }}
+                {{ user.firstName }}
+                <br>
+                {{ user.lastName }}
+            {% endfor %}
+        </section>
+{% endblock %}

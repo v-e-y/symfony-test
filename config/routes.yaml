@@ -1,14 +1,21 @@
 controllers:
     resource: ../src/Controller/
     type: attribute
-app_controller:
+app_controller_home:
     path: /
     controller: App\Controller\AppController::index
-user_controller_add:
-    path: /user/add
-    controller: App\Controller\UserController::add
+# GET:Show form for create new user|POST:Create new user
+app_user_new:
+    path: /user/new
+    controller: App\Controller\UserController::new
+    methods: GET|POST
+# Add products to the user
+app_user_products_add:
+    path: /users/products/add
+    controller: App\Controller\UserController::addProducts
+    methods: GET|POST
+# Show users with products
+app_user_products:
+    path: /users/products
+    controller: App\Controller\UserController::getUsersProducts
     methods: GET
-user_controller_create:
-    path: /user/add/store
-    controller: App\Controller\UserController::store
-    methods: POST
